@@ -72,7 +72,7 @@
 }
 .item:hover .label,
 .itemActive .label {
-  max-width: 12rem;
+  max-width: 8rem;
   opacity: 1;
   transform: none;
 }
@@ -172,13 +172,14 @@
   color: var(--accent);
 }
 
-/* Show one or the other by width. */
-@media (max-width: 67rem) {
+/* Show one or the other by width. The rail only appears once the page reserves
+   a left gutter for it (≥75rem, see page.module.css), so it never overlaps text. */
+@media (max-width: 75rem) {
   .rail {
     display: none;
   }
 }
-@media (min-width: 67.01rem) {
+@media (min-width: 75.01rem) {
   .bar {
     display: none;
   }

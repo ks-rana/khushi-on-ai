@@ -1,3 +1,12 @@
+/* Reserve a left gutter for the fixed nav rail on large screens, so content
+   never sits underneath it. Below this width the rail is hidden and the mobile
+   top bar is used instead, so no gutter is needed. */
+@media (min-width: 75rem) {
+  .shell {
+    padding-left: 12rem;
+  }
+}
+
 .footer {
   border-top: var(--hairline) solid var(--rule);
   padding: var(--space-2xl) var(--gutter) var(--space-3xl);

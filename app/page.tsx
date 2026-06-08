@@ -15,9 +15,10 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <Hero />
+      <div className={styles.shell}>
+        <Hero />
 
-      <main id="main">
+        <main id="main">
         <Station id={s.smart.id} n={s.smart.n} question={s.smart.question} kicker="The argument">
           <Smart />
         </Station>
@@ -52,6 +53,7 @@ export default function Home() {
           </p>
         </div>
       </footer>
+      </div>
     </>
   );
 }

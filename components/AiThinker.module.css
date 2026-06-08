@@ -1,0 +1,121 @@
+.svg {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* ---- static styling ---- */
+.head {
+  fill: var(--paper-raised);
+  stroke: var(--ink-strong);
+  stroke-width: 2.5;
+}
+.face {
+  fill: var(--paper-sunk);
+  stroke: var(--rule-strong);
+  stroke-width: 1.5;
+}
+.eye {
+  fill: var(--accent);
+}
+.mouth {
+  stroke: var(--ink-muted);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  fill: none;
+}
+.wire {
+  stroke: var(--rule-strong);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+.spark {
+  fill: var(--accent);
+}
+.base {
+  fill: var(--rule-strong);
+}
+.node {
+  fill: var(--ink-faint);
+}
+.orbit {
+  stroke: var(--rule);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 9;
+  fill: none;
+}
+.q {
+  fill: var(--accent);
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 500;
+  font-style: italic;
+}
+.dotA,
+.dotB {
+  fill: var(--accent-dim);
+}
+
+/* ---- motion (only when the user is OK with it) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .float {
+    animation: float 6s ease-in-out infinite;
+    transform-origin: center;
+  }
+  .spark {
+    animation: pulse 2.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .eye {
+    animation: blink 5s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .q {
+    animation: bob 3.6s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .orbit {
+    animation: spin 36s linear infinite;
+    transform-origin: 120px 150px;
+  }
+  .dotA {
+    animation: floatDot 4.5s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .dotB {
+    animation: floatDot 5.5s ease-in-out infinite reverse;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.35); }
+}
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(7deg); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes floatDot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
