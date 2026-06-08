@@ -1,0 +1,189 @@
+.shell {
+  margin: var(--space-l) 0;
+  max-width: var(--measure);
+  background: var(--paper-raised);
+  border: var(--hairline) solid var(--rule);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.pad {
+  padding: var(--space-l);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-s);
+}
+
+.h {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 460;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-s);
+}
+
+.p {
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-s);
+}
+.p strong {
+  color: var(--ink-strong);
+  font-weight: 560;
+}
+
+/* ---- buttons ---- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-top: var(--space-m);
+}
+.btn {
+  background: var(--accent);
+  color: #14110c;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.3rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.03em;
+  transition: background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.btn:hover { background: var(--accent-bright); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: var(--hairline) solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.3rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.03em;
+  transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.ghost:hover { border-color: var(--accent); color: var(--accent-bright); }
+
+/* ---- consent ---- */
+.consentList {
+  margin: var(--space-s) 0;
+  padding-left: 1.1rem;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+.consentList li { margin-bottom: 0.35rem; }
+.consentList li::marker { color: var(--accent); }
+
+/* ---- mode cards ---- */
+.modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-s);
+  margin-top: var(--space-m);
+}
+@media (max-width: 34rem) { .modes { grid-template-columns: 1fr; } }
+.mode {
+  text-align: left;
+  background: var(--paper-sunk);
+  border: var(--hairline) solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-m);
+  color: var(--ink);
+  transition: border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.mode:hover { border-color: var(--accent); transform: translateY(-2px); }
+.modeTitle { font-family: var(--font-display); font-size: var(--step-1); margin-bottom: 0.3rem; color: var(--ink-strong); }
+.modeDesc { font-size: var(--step--1); color: var(--ink-muted); line-height: 1.5; }
+
+/* ---- question / answer ---- */
+.qLabel { font-size: var(--step--1); color: var(--ink-faint); font-family: var(--font-mono); margin-bottom: 0.4rem; }
+.q { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink-strong); margin-bottom: var(--space-s); line-height: 1.2; }
+.textarea {
+  width: 100%;
+  min-height: 6.5rem;
+  background: var(--paper-sunk);
+  border: var(--hairline) solid var(--rule-strong);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  padding: 0.8rem 0.9rem;
+  resize: vertical;
+}
+.textarea:focus { border-color: var(--accent); outline: none; }
+.counter { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-faint); margin-top: 0.3rem; text-align: right; }
+
+.progress { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.1em; }
+
+/* ---- be-the-judge cards ---- */
+.pair { display: grid; gap: var(--space-s); margin: var(--space-m) 0; }
+@media (min-width: 40rem) { .pair { grid-template-columns: 1fr 1fr; } }
+.card {
+  text-align: left;
+  background: var(--paper-sunk);
+  border: var(--hairline) solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: var(--space-m);
+  color: var(--ink);
+  font-size: var(--step--1);
+  line-height: 1.55;
+  transition: border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+  cursor: pointer;
+}
+.card:hover { border-color: var(--accent); }
+.cardPick { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); margin-top: 0.7rem; }
+
+/* ---- results ---- */
+.verdict {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: var(--space-s) 0;
+}
+.verdictNum { font-family: var(--font-display); font-size: var(--step-4); line-height: 1; }
+.human { color: var(--accent); }
+.machine { color: var(--machine); }
+.unclear { color: var(--ink-muted); }
+
+.cueList { list-style: none; padding: 0; margin: var(--space-s) 0; display: grid; gap: 0.4rem; }
+.cue { display: flex; align-items: center; gap: 0.5rem; font-size: var(--step--1); }
+.cueDot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.cueDot.human { background: var(--accent); }
+.cueDot.machine { background: var(--machine); }
+.cueLabel { color: var(--ink-muted); }
+.reasoning {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ink);
+  background: var(--accent-tint);
+  border-left: 2px solid var(--accent);
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius);
+  margin: var(--space-s) 0;
+  font-size: var(--step--1);
+  line-height: 1.5;
+}
+
+.answerResult { border-top: var(--hairline) solid var(--rule); padding-top: var(--space-s); margin-top: var(--space-s); }
+
+/* opt-in / feedback */
+.optin { display: flex; gap: 0.6rem; align-items: flex-start; margin-top: var(--space-s); font-size: var(--step--1); color: var(--ink-muted); }
+.optin input { margin-top: 0.25rem; accent-color: var(--accent); }
+
+.divider { border: none; border-top: var(--hairline) solid var(--rule); margin: var(--space-m) 0; }
+
+.muted { font-size: var(--step--1); color: var(--ink-faint); line-height: 1.5; }
+
+.tableNote { font-size: 0.72rem; color: var(--ink-faint); font-family: var(--font-mono); margin-top: var(--space-xs); }

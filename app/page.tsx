@@ -4,6 +4,7 @@ import Station from "@/components/Station";
 import Reveal from "@/components/Reveal";
 import Prose from "@/components/Prose";
 import Smart from "@/content/stations/Smart";
+import Human from "@/content/stations/Human";
 import { STATIONS } from "@/content/stations";
 import styles from "./page.module.css";
 
@@ -33,7 +34,7 @@ export default function Home() {
         </Station>
 
         <Station id={s.human.id} n={s.human.n} question={s.human.question} kicker="The experiment">
-          <Placeholder note="The centerpiece — your Turing study, the live 'how human do you sound?' tool, the guess-the-human game, and the three growing graphs (you, the crowd, and the visitor)." />
+          <Human />
         </Station>
 
         <Station id={s.measure.id} n={s.measure.n} question={s.measure.question} kicker="On benchmarks">

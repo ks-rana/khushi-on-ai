@@ -1,5 +1,6 @@
 "use client";
 
+import type { ElementType, Ref } from "react";
 import { useInView } from "@/lib/useInView";
 import styles from "./Reveal.module.css";
 
@@ -10,19 +11,19 @@ import styles from "./Reveal.module.css";
 export default function Reveal({
   children,
   delay = 0,
-  as: Tag = "div",
+  as = "div",
   className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
-  as?: keyof React.JSX.IntrinsicElements;
+  as?: ElementType;
   className?: string;
 }) {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const Tag: ElementType = as;
   return (
-    // @ts-expect-error — dynamic tag with a forwarded ref is fine at runtime
     <Tag
-      ref={ref}
+      ref={ref as Ref<HTMLElement>}
       className={`${styles.reveal} ${inView ? styles.in : ""} ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
