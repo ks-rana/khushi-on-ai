@@ -1,0 +1,185 @@
+/* ============================ Desktop rail ============================ */
+.rail {
+  position: fixed;
+  left: max(1.25rem, 2.5vw);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+.railOn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: none;
+  border: none;
+  padding: 0.45rem 0.5rem;
+  width: 100%;
+  text-align: left;
+  color: var(--ink-faint);
+  border-radius: var(--radius);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--rule-strong);
+  flex: none;
+  transition: background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: max-width var(--dur) var(--ease), opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.item:hover,
+.rail:hover .item:hover {
+  color: var(--ink);
+}
+.item:hover .label,
+.itemActive .label {
+  max-width: 12rem;
+  opacity: 1;
+  transform: none;
+}
+.item:hover .dot {
+  border-color: var(--accent);
+}
+
+.itemActive {
+  color: var(--accent);
+}
+.itemActive .dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.15);
+}
+.itemActive .num {
+  opacity: 1;
+}
+
+/* ============================ Mobile bar ============================ */
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: var(--hairline) solid var(--rule);
+  transform: translateY(-100%);
+  transition: transform var(--dur) var(--ease);
+}
+.barOn {
+  transform: none;
+}
+
+.barFill {
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--dur) var(--ease);
+}
+
+.barButton {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.7rem var(--gutter);
+  text-align: left;
+  color: var(--ink);
+}
+
+.barNum {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  flex: none;
+}
+
+.barLabel {
+  font-family: var(--font-serif);
+  font-size: var(--step--1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.barChevron {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  flex: none;
+}
+
+.sheet {
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0 0.6rem;
+  border-top: var(--hairline) solid var(--rule);
+}
+
+.sheetItem {
+  display: flex;
+  gap: 0.7rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.6rem var(--gutter);
+  text-align: left;
+  color: var(--ink-muted);
+  font-family: var(--font-serif);
+  font-size: var(--step--1);
+}
+.sheetActive {
+  color: var(--accent);
+}
+
+/* Show one or the other by width. */
+@media (max-width: 67rem) {
+  .rail {
+    display: none;
+  }
+}
+@media (min-width: 67.01rem) {
+  .bar {
+    display: none;
+  }
+}

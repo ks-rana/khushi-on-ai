@@ -1,0 +1,88 @@
+.prose {
+  max-width: var(--measure);
+  font-size: var(--step-0);
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+.prose > p {
+  margin-bottom: var(--space-s);
+}
+
+/* A larger lead paragraph to open a section. */
+.prose :global(.lead) {
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--ink-strong);
+  font-weight: 380;
+  margin-bottom: var(--space-m);
+}
+
+.prose em {
+  font-style: italic;
+}
+.prose strong {
+  font-weight: 560;
+  color: var(--ink-strong);
+}
+
+.prose a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+.prose a:hover {
+  color: var(--accent-bright);
+}
+
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 460;
+  letter-spacing: -0.01em;
+  margin: var(--space-l) 0 var(--space-xs);
+}
+
+.prose ul,
+.prose ol {
+  margin: var(--space-s) 0 var(--space-s) 1.2rem;
+  padding: 0;
+}
+.prose li {
+  margin-bottom: 0.5rem;
+}
+.prose li::marker {
+  color: var(--accent);
+}
+
+/* Inline pull-quote / aside emphasis */
+.prose :global(.pull) {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1.12;
+  font-weight: 420;
+  letter-spacing: -0.015em;
+  color: var(--ink-strong);
+  margin: var(--space-l) 0;
+  padding-left: var(--space-m);
+  border-left: 2px solid var(--accent);
+  max-width: 20ch;
+}
+
+/* A quiet note / honest-framing callout */
+.prose :global(.note-block) {
+  font-size: var(--step--1);
+  line-height: 1.55;
+  color: var(--ink-muted);
+  background: var(--paper-raised);
+  border: var(--hairline) solid var(--rule);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: var(--space-s) var(--space-m);
+  margin: var(--space-m) 0;
+}
+.prose :global(.note-block) strong {
+  color: var(--accent);
+  font-weight: 500;
+}

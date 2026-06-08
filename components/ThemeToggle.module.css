@@ -1,0 +1,28 @@
+.toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: var(--hairline) solid var(--rule-strong);
+  border-radius: 50%;
+  color: var(--ink-muted);
+  transition: color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+
+.toggle:hover {
+  color: var(--accent-bright);
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.toggle:active {
+  transform: scale(0.92);
+}
+
+.icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}

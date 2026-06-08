@@ -1,0 +1,55 @@
+.ref {
+  font-family: var(--font-mono);
+  font-size: 0.62em;
+  line-height: 0;
+  vertical-align: super;
+  color: var(--accent);
+  padding: 0 0.12em;
+}
+.ref a {
+  text-decoration: none;
+}
+.ref a:hover {
+  color: var(--accent-bright);
+}
+
+.note {
+  font-family: var(--font-serif);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+.noteNum {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 0.4em;
+  vertical-align: super;
+  font-size: 0.62em;
+}
+
+/* Wide screens: float into the right margin, Tufte-style. */
+@media (min-width: 64rem) {
+  .note {
+    float: right;
+    clear: right;
+    width: 13.5rem;
+    margin-right: -16rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.9rem;
+    text-align: left;
+    position: relative;
+  }
+}
+
+/* Narrow screens: collapse inline as an indented aside. */
+@media (max-width: 63.99rem) {
+  .note {
+    display: block;
+    margin: 0.6rem 0 0.9rem;
+    padding-left: 0.85rem;
+    border-left: 2px solid var(--accent);
+  }
+}

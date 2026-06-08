@@ -1,0 +1,44 @@
+.wrap {
+  margin-top: var(--space-l);
+  padding-top: var(--space-m);
+  border-top: var(--hairline) solid var(--rule);
+  max-width: var(--measure);
+}
+
+.heading {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-s);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.5rem;
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+.num {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.85em;
+}
+
+.text a {
+  color: var(--accent);
+  text-decoration: none;
+}

@@ -1,0 +1,34 @@
+.station {
+  padding: var(--space-2xl) var(--gutter);
+  border-top: var(--hairline) solid var(--rule);
+  scroll-margin-top: 4rem;
+}
+
+.inner {
+  max-width: calc(var(--measure) + 16rem);
+  margin: 0 auto;
+}
+
+.head {
+  margin-bottom: var(--space-l);
+}
+
+.n {
+  font-size: var(--step--1);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: var(--space-s);
+}
+
+.kicker {
+  color: var(--ink-faint);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.question {
+  font-size: var(--step-4);
+  font-weight: 460;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
