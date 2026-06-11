@@ -31,6 +31,17 @@ export default function Station({
           </h2>
         </Reveal>
         {children}
+        <p className={`mono ${styles.sectionFooter}`}>
+          By Khushi Rana &middot; Open to AI governance and AI evaluation roles
+          &middot;{" "}
+          <a
+            href="https://khushi-rana-website.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            khushi-rana-website.vercel.app
+          </a>
+        </p>
       </div>
     </section>
   );

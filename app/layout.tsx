@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { display, serif, mono } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://khushi-on-ai.vercel.app"),
   title: "Khushi on AI — an interactive essay",
   description:
     "Five questions I actually investigated about artificial intelligence, seen through a psychology lens — including a live experiment in whether a machine can pass as human.",
@@ -12,6 +14,14 @@ export const metadata: Metadata = {
     description:
       "Five questions about AI through a psychology lens, plus a live experiment in machine humanness.",
     type: "article",
+    url: "https://khushi-on-ai.vercel.app",
+    siteName: "Khushi on AI",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Khushi on AI — an interactive essay",
+    description:
+      "Five questions about AI through a psychology lens, plus a live experiment in machine humanness.",
   },
 };
 
@@ -46,6 +56,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );

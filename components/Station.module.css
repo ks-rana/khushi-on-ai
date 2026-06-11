@@ -32,3 +32,23 @@
   letter-spacing: -0.02em;
   max-width: 18ch;
 }
+
+.sectionFooter {
+  margin-top: var(--space-l);
+  padding-top: var(--space-s);
+  border-top: var(--hairline) solid var(--rule);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.sectionFooter a {
+  color: var(--ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sectionFooter a:hover,
+.sectionFooter a:focus-visible {
+  color: var(--accent);
+}
